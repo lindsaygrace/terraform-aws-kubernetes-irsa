@@ -50,12 +50,12 @@ data "aws_region" "current" {}
 
 resource "aws_codebuild_project" "pod_identity_webhook" {
   name         = "pod-identity-webhook"
-  description  = "Build https://github.com/aws/amazon-eks-pod-identity-webhook"
+  description  = "Build https://github.com/lindsaygrace/amazon-eks-pod-identity-webhook"
   service_role = aws_iam_role.codebuild_pod_identity_webhook.arn
 
   source {
     type      = "GITHUB"
-    location  = "https://github.com/aws/amazon-eks-pod-identity-webhook.git"
+    location  = "https://github.com/lindsaygrace/amazon-eks-pod-identity-webhook.git"
     buildspec = <<EOF
 version: 0.2
 phases:
